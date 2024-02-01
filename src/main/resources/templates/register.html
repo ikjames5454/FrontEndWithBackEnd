@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<h1>Register Page</h1>
+<br>
+<!--<div th:if="${successMessage}" class="alert alert-success">-->
+<!--    <p th:text="${successMessage}"></p>-->
+<!--</div>-->
+
+<!--<div th:if="${errorMessage}" class="alert alert-danger">-->
+<!--    <p th:text="${errorMessage}"></p>-->
+<!--</div>-->
+<div id="successMessage" class="alert alert-success" style="display: none;">
+    <p></p>
+</div>
+
+<div id="errorMessage" class="alert alert-danger" style="display: none;">
+    <p></p>
+</div>
+
+<form id="registerForm"  th:action="@{/save2}" method="post" role="form" th:object="${customer}">
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="id" name="customerId" th:field="*{customerId}" placeholder="Enter Id">
+    </div>
+    <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input type="text" class="form-control" id="customerName" name="customerName" th:field="*{customerName}" placeholder="Enter Customer Name">
+    </div>
+    <div class="form-group">
+        <label for="customerAddress">Customer Address</label>
+        <input type="text" class="form-control" id="customerAddress" name="customerAddress" th:field="*{customerAddress}" placeholder="Enter Customer Address">
+    </div>
+    <div class="form-group">
+        <label for="customerSalary">Customer Salary</label>
+        <input type="text" class="form-control" id="customerSalary" name="customerSalary" th:field="*{customerSalary}" placeholder="Enter Customer Salary">
+    </div>
+    <div class="form-group">
+        <label for="customerNumber">Customer Number</label>
+        <input type="text" class="form-control" id="customerNumber" name="customerNumber" th:field="*{customerNumber}" placeholder="Enter Customer Number">
+    </div>
+    <div class="form-group">
+        <label for="nic">Nic</label>
+        <input type="text" class="form-control" id="nic" name="nic" th:field="*{nic}" placeholder="Enter Nic">
+    </div>
+    <div class="form-group">
+        <label for="activeState">Active State</label>
+        <input type="text" class="form-control" id="activeState" name="activeState" th:field="*{activeState}" placeholder="Enter Active State">
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+<script src="index.js"></script>
+</html>
